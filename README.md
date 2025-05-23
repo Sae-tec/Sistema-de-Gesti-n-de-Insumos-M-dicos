@@ -26,7 +26,7 @@ El modelado abarca los siguientes aspectos críticos:
 
 🔹 **1. Diagrama de Casos de Uso UML**
 
-![Image](https://github.com/user-attachments/assets/65f87f84-ab0d-4cf9-be1b-3ce76af3caa0)
+![Image](https://github.com/user-attachments/assets/d46e2189-c127-4d07-ad20-7eef3760e2d8)
 
 ### Descripción general
 
