@@ -65,7 +65,7 @@ Se utilizaron `<<include>>` cuando una acción siempre requiere otra funcionalid
 
 🔹 **2. Diagrama de Clases UML con Patrones Aplicados**
 
-![Diagrama De Clases](diagramas/Diagrama%20de%20Clases.png)
+![Image](https://github.com/user-attachments/assets/2caffe19-b77b-471a-8d32-f0044a8ddd15)
 
 ---
 
