@@ -71,27 +71,27 @@ Se utilizaron `<<include>>` cuando una acción siempre requiere otra funcionalid
 
 🧩 **Justificación Arquitectónica y Patrones Aplicados**
 
-### 1. **Singleton (ConfiguracionTurnos)**
+### 1. **Singleton (ServiceRegistry)**
 **Justificación:**
-Controla parámetros globales del sistema como tipos de servicio, tiempos máximos, prioridad de atención y reglas de turno.
+Grarantiza un unico punto de acceso global para el registro de servicios disponibles y sus configutaciones
 
 **Objetivo:**
 Asegurar una única fuente de verdad para configuraciones compartidas, evitando conflictos o duplicidades.
 
 ---
 
-### 2. **Prototype (PlantillaTurno)**
+### 2. **Prototype (clase Ticket)**
 **Justificación:**
-Permite generar rápidamente nuevos turnos a partir de plantillas preconfiguradas por tipo de atención (ej. pediatría, urgencia, control).
+Permite clonar tickest existentes para generar nuevos con la misma configuracion base.
 
 **Objetivo:**
-Agilizar la creación de turnos comunes sin redefinir cada uno desde cero, aumentando la eficiencia operativa.
+Optimizacion de creacion de objetos complejos.
 
 ---
 
-### 3. **Adapter (AdaptadorPantallaExterna)**
+### 3. **Adapter (ExternalNotificationAdapter)**
 **Justificación:**
-Integra el sistema con pantallas o quioscos de llamado de turno sin acoplarse directamente a sus APIs o protocolos específicos.
+adapta la interfaz de servicios externos de notificacion(SMS/Email) a nuestro sistema.
 
 **Objetivo:**
 Asegurar la compatibilidad con múltiples dispositivos o software de visualización, manteniendo la independencia del sistema central.
@@ -104,8 +104,7 @@ Asegurar la compatibilidad con múltiples dispositivos o software de visualizaci
 
 ### Despliegue Físico y decisiones técnicas:
 
-- Separación en nodos de **interfaz**, **lógica de turnos**, **configuración**, y **visualización externa**.
-- Comunicación mediante servicios REST para asegurar escalabilidad y desacoplamiento.
+- Separación en nodos de **interfaces**, **sistema central**, y **base de datos**.
 - Módulo de configuración aislado y accesible solo por administradores para evitar modificaciones accidentales.
 - Posibilidad de ejecutar instancias paralelas para distintos servicios clínicos o sucursales.
 
@@ -117,7 +116,7 @@ Este sistema fue modelado siguiendo criterios profesionales de ingeniería de so
 
 - Coherencia entre los niveles de abstracción: casos de uso ➡ clases ➡ implementación.
 - Aplicación de patrones de diseño según la problemática específica, y no como elemento decorativo.
-- Modularización clara y capacidad de adaptación futura a nuevos requerimientos (ej. apps móviles, módulos para farmacias).
+- Modularización clara y capacidad de adaptación futura a nuevos requerimientos.
 - Enfoque en la experiencia de usuario tanto para pacientes como operadores.
 
 ---
