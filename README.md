@@ -98,18 +98,9 @@ Asegurar la compatibilidad con múltiples dispositivos o software de visualizaci
 
 ---
 
-### 4. **Bridge (InterfazUsuario + VistaPaciente, VistaRecepcionista)**
-**Justificación:**
-Separa la lógica del sistema de las interfaces específicas según el tipo de usuario, facilitando adaptaciones a móviles, web o quioscos.
-
-**Objetivo:**
-Flexibilizar la interfaz según el contexto de uso, sin duplicar lógica de negocio ni complicar el mantenimiento.
-
----
-
 🔹 **3. Diagrama de Implementación UML**
 
-![Diagrama de Implementacion](diagramas/Diagrama%20de%20Implementación.png)
+![Image](https://github.com/user-attachments/assets/8f0e202f-c84f-4766-92e7-24e4f4b02b45)
 
 ### Despliegue Físico y decisiones técnicas:
 
