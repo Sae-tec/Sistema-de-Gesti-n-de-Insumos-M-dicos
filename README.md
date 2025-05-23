@@ -34,33 +34,32 @@ El análisis funcional permitió identificar actores clave y sus respectivas int
 
 **Actores identificados:**
 
-- **Paciente:** Solicita su turno para atención.
-- **Recepcionista:** Asigna turnos manualmente, consulta estado de filas.
-- **Supervisor Clínico:** Consulta métricas, configura prioridades y monitorea carga de atención.
-- **Sistema de Pantallas:** Dispositivo externo que visualiza el número actual llamado.
-- **Administrador del Sistema:** Gestiona usuarios, parámetros y servicios disponibles.
+- **Paciente:** Solicita su turno para servicio `<<automatico>>`, consulta posicion en la fila.
+- **Recepcionista:** Reasigna turnos, gestion de prioridades especiales.
+- **Supervisor:** Generacion de metricas, gestiona modulos y servicios y audita el sistema.
 
 **Casos de uso destacados:**
 
-- Solicitud Automática de Número de Fila  
-  `<<extend>>`: Selección de Servicio Específico  
-  `<<extend>>`: Validación de Prioridad Especial
+- Asignacion automatizada por servicio  
+  `<<include>>`: Selecciona Servicio   
+  `<<include>>`: Generar QR único
 
-- Llamado de Turno  
-  `<<include>>`: Visualización en Pantalla
+- Gestion de Prioridades especiales
+  `<<include>>`: Validar criterios de prioridad
 
-- Consulta de Tiempo de Espera Promedio  
-  `<<extend>>`: Generación de Reporte Diario
+- llamado de turnos tiempo real
+  `<<extend>>`: Notificar paciente
+  `<<extend>>`: Actualizar displays
 
-- Gestión de Configuración de Servicios  
-  `<<include>>`: Configuración de Prioridades y Lógica de Atención
+- Generacion de métricas
+  `<<extend>>`: Exportar reportes
 
-- Auditoría de Llamados  
-  `<<include>>`: Reporte de Histórico de Turnos
+- Gestión de módulos y servicios  
+  `<<extend>>`: configurar nuevos servicios
 
 **Justificación del modelado:**
 
-Se utilizaron `<<include>>` cuando una acción siempre requiere otra funcionalidad base (ej. auditoría que genera reporte obligatorio), y `<<extend>>` cuando la funcionalidad es opcional o condicional (ej. prioridad especial). Esto permite modelar comportamientos realistas en el sistema de atención por turnos.
+Se utilizaron `<<include>>` cuando una acción siempre requiere otra funcionalidad base (ej. Asignacion de servicios que el paciente tiene que seleccionar el servicio obligatorio), y `<<extend>>` cuando la funcionalidad es opcional o condicional (ej. Gestión de módulos y servicios ). Esto permite modelar comportamientos realistas en el sistema de atención por turnos.
 
 ---
 
